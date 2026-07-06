@@ -1,7 +1,7 @@
 class Student:
-    def __init__(self,student_id ,nam ,email,course ):
+    def __init__(self,student_id ,full_name ,email,course ):
         self.__student_id = student_id
-        self.__full_name = nam
+        self.__full_name = full_name
         self.__email = email
         self.course = []
 
@@ -21,11 +21,18 @@ class Student:
             print("Invalid Email address")
 
 
+
     def enroll_course(self,course_code):
         if course_code not in self.course:
             self.course.append(course_code)
         else:
             print("Student already enrolled in this course")
-            
+
+    def display_info(self):
+        print(f"Student ID :{self.__student_id}"
+              f"\nFull Name :{self.__full_name}"
+              f"\nEmail :{self.__email}")
+        print(f"Courses : {','.join(self.course) if self.course else "No Courses enrolled"})")
+
 
 
