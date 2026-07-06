@@ -19,5 +19,13 @@ class Student:
             self.__email = email
         else:
             print("Invalid Email address")
+
+
+    def enroll_course(self,course_code):
+        if course_code not in self.course:
+            self.course.append(course_code)
+        else:
+            print("Student already enrolled in this course")
             
+
 
