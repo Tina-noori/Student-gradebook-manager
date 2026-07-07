@@ -11,4 +11,7 @@ class Exam(Assessment):
         percentage =self.calculate_percentage(score)
         if percentage is None:
             return "Invalid Score"
-        elif
+        elif percentage >= 55 :
+            return "Passed exam"
+        else:
+            return "Failed exam"
