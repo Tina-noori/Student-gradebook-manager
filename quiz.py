@@ -19,4 +19,3 @@ class Quiz(Assessment):
                 print("Needs more practice")
             else:
                 print("Quiz failed")
-                
