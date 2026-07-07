@@ -22,6 +22,13 @@ class Course:
 
 
 
+    def display_info(self):
+        print(f"Course Code: {self.course_code}"
+              f"\nCourse Name: {self.course_name}"
+              )
+        print(f"Students:  {','.join (self.students) if self.students else 'No students'})")
+        print(f"Assessments: {','.join ([a.title for a in self.assessments]) if self.assessments else 'No assessments' }")
+
 
 
 
