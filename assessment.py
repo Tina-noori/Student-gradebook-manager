@@ -9,7 +9,20 @@ class Assessment:
             return (score/self.max_score)*100
         return None
 
-    deff
+    def grade_message(self,score):
+            percentage = self.calculate_percentage(score)
+            if percentage is  None:
+                print("invalid score")
+            elif percentage >= 90 :
+                print("Excellent")
+            elif percentage >= 70 :
+                print("Good")
+            elif percentage >= 50 :
+                print("Need for effort")
+            else:
+                 print("Failed")
+
+
 
 
 
