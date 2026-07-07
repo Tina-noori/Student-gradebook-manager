@@ -19,3 +19,4 @@ class Quiz(Assessment):
                 return "Needs more practice"
             else:
                 return "Quiz failed"
+
