@@ -5,3 +5,10 @@ class Exam(Assessment):
 
     def display_info(self):
         print(f"Exam : {self.title} - Max Score: {self.max_score}")
+
+
+    def grade_message(self,score):
+        percentage =self.calculate_percentage(score)
+        if percentage is None:
+            return "Invalid Score"
+        elif

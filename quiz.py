@@ -10,12 +10,12 @@ class Quiz(Assessment):
     def grade_message(self,score):
             percentage = self.calculate_percentage(score)
             if percentage is None:
-                print("Invalid score")
+                return "Invalid score"
             elif percentage >= 90:
-                print("Great quiz result")
+                return "Great quiz result"
             elif percentage >= 70:
-                print("Good effort on the quiz")
+                return "Good effort on the quiz"
             elif percentage >= 50:
-                print("Needs more practice")
+                return "Needs more practice"
             else:
-                print("Quiz failed")
+                return "Quiz failed"

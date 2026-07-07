@@ -12,15 +12,15 @@ class Assessment:
     def grade_message(self,score):
             percentage = self.calculate_percentage(score)
             if percentage is  None:
-                print("invalid score")
+                return "invalid score"
             elif percentage >= 90 :
-                print("Excellent")
+                return "Excellent"
             elif percentage >= 70 :
-                print("Good")
+                return "Good"
             elif percentage >= 50 :
-                print("Need for effort")
+                return "Need for effort"
             else:
-                 print("Failed")
+                 return "Failed"
 
 
     def display_info(self):
