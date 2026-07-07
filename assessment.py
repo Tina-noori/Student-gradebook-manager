@@ -23,6 +23,10 @@ class Assessment:
                  print("Failed")
 
 
+    def display_info(self):
+        print(f"{self.title} - Max score: {self.max_score}")
+
+
 
 
 
