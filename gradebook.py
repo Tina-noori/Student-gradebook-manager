@@ -26,6 +26,15 @@ class Gradebook:
             self.courses[course_code].add_assessment(assessment)
         else:
             print("course not found")
-            
+
+
+    def record_grade(self,student_id,course_code,assessment_title,score):
+        if student_id in self.students and course_code in self.courses:
+            if course_code in self.grades[student_id]:
+                self.grades[student_id][course_code][assessment_title] = score
+            else:
+                print("Student not enrolled in course")
+        else:
+            print("Student or course not found")
 
 
