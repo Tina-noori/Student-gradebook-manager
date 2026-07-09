@@ -37,4 +37,12 @@ class Gradebook:
         else:
             print("Student or course not found")
 
+    def calculate_average(self,student_id,course_code):
+        if student_id in self.grades and course_code in self.grades[student_id]:
+            score = list(self.grades[student_id][course_code].values())
+            if score :
+                return sum(score)/len(score)
+            return None
+
+
 
