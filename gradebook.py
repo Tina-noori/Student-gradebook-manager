@@ -9,3 +9,8 @@ class Gradebook:
     def add_student(self,student):
         self.students[student.student.id] = student
         self.grades[student.student.id] = {}
+
+    def add_course(self,course):
+        self.courses[course.course_code] = course
+        
+
