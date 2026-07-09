@@ -21,4 +21,11 @@ class Gradebook:
             else:
                 print("student or course not found")
 
+    def add_assessment(self,course_code,assessment):
+        if course_code in self.courses:
+            self.courses[course_code].add_assessment(assessment)
+        else:
+            print("course not found")
+            
+
 
