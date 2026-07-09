@@ -12,5 +12,13 @@ class Gradebook:
 
     def add_course(self,course):
         self.courses[course.course_code] = course
-        
+
+
+    def enroll_student(self,student_id,course_code):
+        if student_id in self.students and course_code in self.courses:
+            if course_code not in self.grades[student_id]:
+                self.grades[student_id][course_code] = {}
+            else:
+                print("student or course not found")
+
 
