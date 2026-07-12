@@ -44,5 +44,20 @@ class Gradebook:
                 return sum(score)/len(score)
             return None
 
+    def show_report(self,student_id):
+        if student_id in self.students:
+            student = self.students[student_id]
+            print(f"Report for {student.name} ({student.student_id})")
+            if student_id in self.grades:
+                for course_code, assessment in self.grades[student_id].items():
+                    average = self.calculate_average(student_id,course_code)
+                    result = self.get_result(average)
+                    print(f"{course_code} Average: {average}, Result: {result}")
+                    for assessment_title, score in assessment.items():
+                        print(f"{assessment_title}: {score}")
+            else:
+                print("student not found")
+
+
 
 
