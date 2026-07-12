@@ -52,11 +52,15 @@ class Gradebook:
                 for course_code, assessment in self.grades[student_id].items():
                     average = self.calculate_average(student_id,course_code)
                     result = self.get_result(average)
-                    print(f"{course_code} Average: {average}, Result: {result}")
+                    letter= self.get_letter_grade(average)
+                    print(f"Course: {course_code} , Average: {average:.2f}% , Letter Grad: {letter} , Result: {result}")
                     for assessment_title, score in assessment.items():
                         print(f"{assessment_title}: {score}")
             else:
-                print("student not found")
+                print("No grades recorded")
+        else:
+            print("student not found")
+
 
 
     def search_student(self,keyword):
