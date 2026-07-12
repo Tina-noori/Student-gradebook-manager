@@ -87,6 +87,21 @@ class Gradebook:
             return "Failed"
 
 
+    def get_letter_grade(self,average):
+        if average is None:
+            return "N / A"
+        elif average >=90:
+            return "A"
+        elif average >= 80:
+            return "B"
+        elif average >= 70:
+            return "C"
+        elif average >= 55:
+            return "D"
+        else:
+            return "F"
+
+
 
 
 
