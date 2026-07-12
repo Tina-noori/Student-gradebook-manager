@@ -59,5 +59,15 @@ class Gradebook:
                 print("student not found")
 
 
+    def search_student(self,keyword):
+        for student_id,student in self.students.items():
+            if keyword.lower() in student_id.lower() or keyword.lower() in student.name.lower():
+                print(f"Found : {student.name} ({student.id})")
+                return student
+            print("student not found")
+            return None
+
+
+
 
 
