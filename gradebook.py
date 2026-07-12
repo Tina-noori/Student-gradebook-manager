@@ -78,6 +78,15 @@ class Gradebook:
                 print("student not found")
 
 
+    def get_result(self,average):
+        if average is None:
+            return "No grades"
+        elif average >= self.passing_grade:
+            return "Passed"
+        else:
+            return "Failed"
+
+
 
 
 
