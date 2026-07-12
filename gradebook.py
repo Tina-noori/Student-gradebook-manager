@@ -68,6 +68,17 @@ class Gradebook:
             return None
 
 
+    def delete_student(self,student_id):
+        if student_id in self.students:
+            del self.students[student_id]
+            if student_id in self.grades:
+                del self.grades[student_id]
+                print(f"Student {student_id} remove from gradebook")
+            else:
+                print("student not found")
+
+
+
 
 
 
