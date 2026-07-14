@@ -4,6 +4,7 @@ class Gradebook:
         self.students = []
         self.courses = []
         self.grades =[]
+        self.comments =[]
         self.passing_grade = passing_grade
 
     def add_student(self,student):
@@ -104,6 +105,13 @@ class Gradebook:
             return "D"
         else:
             return "F"
+
+    def add_comment(self,student_id,comment):
+        if student_id in self.students:
+            self.comments[student_id] = comment
+            print(f"comment added {student_id}")
+        else:
+            print("student not found")
 
 
 
