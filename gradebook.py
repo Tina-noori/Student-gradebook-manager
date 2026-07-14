@@ -62,6 +62,11 @@ class Gradebook:
         else:
             print("student not found")
 
+            if student_id in self.comments:
+                print(f"Teacher comment : {self.comments[student_id]}")
+            else:
+                print("student not found")
+
 
 
     def search_student(self,keyword):
