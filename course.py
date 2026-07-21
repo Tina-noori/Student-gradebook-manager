@@ -18,7 +18,7 @@ class Course:
         for assessment in self.assessments:
             if assessment.title == title:
                 return assessment
-            return None
+        return None
 
 
 

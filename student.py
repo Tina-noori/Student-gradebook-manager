@@ -32,7 +32,7 @@ class Student:
         print(f"Student ID :{self.__student_id}"
               f"\nFull Name :{self.__full_name}"
               f"\nEmail :{self.__email}")
-        print(f"Courses : {','.join(self.course) if self.course else "No Courses enrolled"})")
+        print(f"Courses : {', '.join(self.course) if self.course else 'No Courses enrolled'}")
 
 
 

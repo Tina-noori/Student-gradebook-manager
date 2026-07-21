@@ -20,8 +20,13 @@ class Gradebook:
             if course_code not in self.grades:
                 self.grades[student_id] = {}
                 self.grades[student_id][course_code] = {}
+                self.students[student_id].enroll(course_code)
+                self.courses[course_code].enroll(student_id)
             else:
-                print("student or course not found")
+                print("Student is ID enrolled")
+        else:
+            print("Student or course not found")
+
 
     def add_assessment(self,course_code,assessment):
         if course_code in self.courses:
@@ -66,9 +71,9 @@ class Gradebook:
         else:
             print("student not found")
 
-            if student_id in self.comments:
+        if student_id in self.comments:
                 print(f"Teacher comment : {self.comments[student_id]}")
-            else:
+        else:
                 print("student not found")
 
 
