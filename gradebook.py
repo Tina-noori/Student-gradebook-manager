@@ -1,15 +1,15 @@
 
 class Gradebook:
     def __init__(self,passing_grade=55):
-        self.students = []
-        self.courses = []
-        self.grades =[]
-        self.comments =[]
+        self.students = {}
+        self.courses = {}
+        self.grades ={}
+        self.comments ={}
         self.passing_grade = passing_grade
 
     def add_student(self,student):
-        self.students[student.student.id] = student
-        self.grades[student.student.id] = {}
+        self.students[student.get_id] = student
+        self.grades[student.get_id] = {}
 
     def add_course(self,course):
         self.courses[course.course_code] = course
@@ -17,7 +17,8 @@ class Gradebook:
 
     def enroll_student(self,student_id,course_code):
         if student_id in self.students and course_code in self.courses:
-            if course_code not in self.grades[student_id]:
+            if course_code not in self.grades:
+                self.grades[student_id] = {}
                 self.grades[student_id][course_code] = {}
             else:
                 print("student or course not found")
@@ -30,8 +31,10 @@ class Gradebook:
 
 
     def record_grade(self,student_id,course_code,assessment_title,score):
-        if student_id in self.students and course_code in self.courses:
-            if course_code in self.grades[student_id]:
+        if student_id not in self.grades:
+            self.grades[student_id] = {}
+            if course_code not in self.grades[student_id]:
+                self.grades[student_id][course_code]={}
                 self.grades[student_id][course_code][assessment_title] = score
             else:
                 print("Student not enrolled in course")
@@ -40,10 +43,11 @@ class Gradebook:
 
     def calculate_average(self,student_id,course_code):
         if student_id in self.grades and course_code in self.grades[student_id]:
-            score = list(self.grades[student_id][course_code].values())
-            if score :
-                return sum(score)/len(score)
-            return None
+            score = self.grades[student_id][course_code].values()
+            return sum(score)/len(score)
+        else:
+            return 0
+
 
     def show_report(self,student_id):
         if student_id in self.students:
