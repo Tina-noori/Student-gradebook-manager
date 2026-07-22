@@ -8,7 +8,7 @@ class Student:
     def get_id(self):
         return self.__student_id
 
-    def get_nam(self):
+    def get_name(self):
         return self.__full_name
 
     def get_email(self):

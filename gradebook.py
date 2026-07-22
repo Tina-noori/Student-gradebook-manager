@@ -75,7 +75,7 @@ class Gradebook:
                 print(f"Teacher comment : {self.comments[student_id]}")
         else:
                 print("student not found")
-            
+
 
 
 
@@ -85,7 +85,7 @@ class Gradebook:
                 print(f"Found : {student.name} ({student.id})")
                 return student
             print("student not found")
-            return None
+        return None
 
 
     def delete_student(self,student_id):
